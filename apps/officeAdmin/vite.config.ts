@@ -1,18 +1,18 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-import federation from "@originjs/vite-plugin-federation";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import federation from '@originjs/vite-plugin-federation'
 
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
     federation({
-      name: "officeAdminApp",
-      filename: "remoteEntry.js",
+      name: 'officeAdminApp',
+      filename: 'remoteEntry.js',
       exposes: {},
       remotes: {},
-      shared: ["react", "react-dom"],
+      shared: ['react', 'react-dom'],
     }),
   ],
   server: {
@@ -20,8 +20,8 @@ export default defineConfig({
     strictPort: true,
   },
   build: {
-    target: "esnext",
+    target: 'esnext',
     minify: false,
     cssCodeSplit: false,
   },
-});
+})

@@ -1,7 +1,7 @@
-import "./App.css";
+import './App.css'
 
 function App() {
-  return <section>Shell App</section>;
+  return <section>Shell App</section>
 }
 
-export default App;
+export default App
