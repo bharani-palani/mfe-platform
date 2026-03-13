@@ -4,7 +4,7 @@ function App() {
 
   return (
       <section>
-        Shell App
+        Product App
       </section>
   )
 }
