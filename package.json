@@ -9,6 +9,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
     "prettier": "^3.7.4",
     "turbo": "^2.8.16",
     "typescript": "5.9.2"
@@ -22,7 +23,6 @@
     "packages/*"
   ],
   "dependencies": {
-    "@originjs/vite-plugin-federation": "^1.4.1",
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/react-router": "^1.166.7",
     "@vitejs/plugin-react": "^6.0.0",
