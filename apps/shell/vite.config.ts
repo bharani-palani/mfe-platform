@@ -24,4 +24,9 @@ export default defineConfig({
     minify: false,
     cssCodeSplit: false,
   },
+  resolve: {
+    alias: {
+      '@repo/ui': '../../../packages/ui/src',
+    },
+  },
 })
