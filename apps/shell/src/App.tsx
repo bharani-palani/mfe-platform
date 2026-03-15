@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Button } from '@repo/ui'
-import './App.css'
+import { Button, Code } from '@repo/ui'
+// import './App.css'
+import '@repo/tailwind-config/styles'
 
 function App() {
   const [data, setData] = useState([])
@@ -15,9 +16,17 @@ function App() {
       <div className="p-5 bg-red-100">Shell App</div>
       <hr className="my-3" />
       <h3>Loaded from UI package</h3>
-      <Button className="inline-flex rounded-sm bg-blue-700 px-2 py-1 text-xs font-small text-white">
-        Hi da
+      <Button className="inline-flex rounded-sm bg-blue-700 px-2 py-1 text-xs font-small text-white mx-1">
+        Click 1
       </Button>
+      <Button className="inline-flex rounded-sm bg-red-700 px-2 py-1 text-xs font-small text-white mx-1">
+        Click 2
+      </Button>
+      <Button className="inline-flex rounded-sm bg-green-900 px-2 py-1 text-xs font-small text-white mx-1">
+        Click 3
+      </Button>
+      <Code className="bg-green-300 px-2 py-1">Code</Code>
+      <br />
       <hr className="my-3" />
       <h3>API call</h3>
       <ul>
