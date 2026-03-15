@@ -1,0 +1,52 @@
+name: Deployment to MAIN
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**/*'
+
+  workflow_dispatch:
+
+jobs:
+  Deployment:
+    name: Deploy to main
+    if: github.event.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Starting Deployment
+        run: echo Deploying..
+
+      - name: Checkout the code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: clean cache
+        run: npm cache clean --force
+
+      - name: npm install
+        run: npm install
+
+      - name: npm run build
+        run: npm run build
+
+      - name: Uploading build
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: 119.18.54.49
+          username: ledgerfg
+          password: Bnisuccess@!123
+          port: '21'
+          local-dir: dist/
+          server-dir: public_html/test/
