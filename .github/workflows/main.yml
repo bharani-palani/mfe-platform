@@ -48,5 +48,5 @@ jobs:
           username: ledgerfg
           password: Bnisuccess@!123
           port: '21'
-          local-dir: dist/
+          local-dir: apps/shell/dist/
           server-dir: public_html/test/
