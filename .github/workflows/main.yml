@@ -36,7 +36,7 @@ jobs:
         run: npm cache clean --force
 
       - name: npm install
-        run: npm install
+        run: npm install --force
 
       - name: npm run build
         run: npm run build
