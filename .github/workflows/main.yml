@@ -41,6 +41,9 @@ jobs:
       - name: npm run build
         run: npm run build
 
+      - name: Display folder and contents
+        run: ls -R -l
+
       - name: Uploading build
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
