@@ -42,7 +42,7 @@ jobs:
         run: npm run build
 
       - name: Display folder and contents
-        run: ls -R -l
+        run: ls -R -l apps
 
       - name: Uploading build
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
