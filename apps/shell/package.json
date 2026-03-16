@@ -15,7 +15,8 @@
     "react-dom": "^19.2.4",
     "zustand": "^5.0.11",
     "@repo/tailwind-config": "*",
-    "@repo/ui": "*"
+    "@repo/ui": "*",
+    "@repo/store": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

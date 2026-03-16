@@ -11,7 +11,7 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {},
       remotes: {},
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', 'zustand'],
     }),
   ],
   server: {
@@ -26,6 +26,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@repo/ui': '../../../packages/ui/src',
+      '@repo/store': '../../../packages/store/mainStore',
     },
   },
 })

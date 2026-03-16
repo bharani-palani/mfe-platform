@@ -41,7 +41,7 @@ jobs:
       - name: npm run build
         run: npm run build
 
-      - name: Display folder and contents
+      - name: Deployin dist folder and contents..
         run: |
           ls -R -l apps/ledgerely/dist
           ls -R -l apps/shell/dist
