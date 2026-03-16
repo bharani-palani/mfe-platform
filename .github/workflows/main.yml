@@ -42,7 +42,10 @@ jobs:
         run: npm run build
 
       - name: Display folder and contents
-        run: ls -R -l apps
+        run: |
+          ls -R -l apps/ledgerely/dist
+          ls -R -l apps/shell/dist
+          ls -R -l apps/officeAdmin/dist
 
       - name: Uploading build
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
