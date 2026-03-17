@@ -6,14 +6,17 @@ const Dashboard = React.lazy(() => import('ledgerelyApp/Dashboard'))
 
 function App() {
   const [data, setData] = useState([])
-  const user = userStore((state: any) => state.user)
-  const setUser = userStore((state: any) => state.setUser)
-  const logout = userStore((state: any) => state.logout)
+  const [loading, setLoading] = useState(false)
+  const { user, setUser, logout } = userStore((state: any) => state)
+
+  const Loader = () => <div>Loading...</div>
 
   useEffect(() => {
+    setLoading(true)
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((response) => response.json())
       .then((json) => setData(json))
+      .finally(() => setLoading(false))
   }, [])
 
   return (
@@ -22,7 +25,7 @@ function App() {
         Vite + federation + tailwind + zustand + Tanstack router + Vitest
       </div>
       <hr className="my-3" />
-      <h3 className="text-2xl">Loaded UI from package</h3>
+      <h3 className="text-2xl">Loaded UI from packages</h3>
       <Button className="inline-flex rounded-sm cursor-pointer bg-blue-700 px-2 py-1 text-xs font-small text-white me-1">
         Click 1
       </Button>
@@ -37,7 +40,7 @@ function App() {
       </Button>
       <Code className="bg-green-300 p-2 text-xs">Code</Code>
       <hr className="my-3" />
-      <h3 className="text-2xl">Loaded Zustand from package</h3>
+      <h3 className="text-2xl">Loaded Zustand from packages</h3>
       <p>User: {user}</p>
       <Button
         className="bg-green-900 rounded-sm cursor-pointer text-white px-2 py-1 text-xs font-small me-1"
@@ -53,10 +56,12 @@ function App() {
       </Button>
       <hr className="my-3" />
       <h3 className="text-2xl">Loaded components from MFE</h3>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Dashboard />
       </Suspense>
-      <h3 className="text-2xl">API call</h3>
+      <hr className="my-3" />
+      <h3 className="text-2xl my-1">API call</h3>
+      {loading && <Loader />}
       <ul>
         {data &&
           data.map((item: any, i: number) => (
