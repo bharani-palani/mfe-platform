@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { Button, Code } from '@repo/ui'
 import { userStore } from '@repo/store'
 import '@repo/tailwind-config/styles'
+const Dashboard = React.lazy(() => import('ledgerelyApp/Dashboard'))
 
 function App() {
   const [data, setData] = useState([])
@@ -18,7 +19,7 @@ function App() {
   return (
     <section className="m-4">
       <div className="p-5 bg-green-300 rounded-lg text-3xl py-3 px-2">
-        Vite + federation + tailwind + zustand + Tanstack router
+        Vite + federation + tailwind + zustand + Tanstack router + Vitest
       </div>
       <hr className="my-3" />
       <h3 className="text-2xl">Loaded UI from package</h3>
@@ -51,6 +52,10 @@ function App() {
         Logout
       </Button>
       <hr className="my-3" />
+      <h3 className="text-2xl">Loaded components from MFE</h3>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Dashboard />
+      </Suspense>
       <h3 className="text-2xl">API call</h3>
       <ul>
         {data &&

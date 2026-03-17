@@ -1,9 +1,10 @@
 import '@repo/tailwind-config/styles'
+import Dashboard from './Dashboard'
 
 function App() {
   return (
-    <section>
-      <div className="text-3xl bg-red-200 p-2">Ledgerely App</div>
+    <section className="m-1">
+      <Dashboard />
     </section>
   )
 }

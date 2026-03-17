@@ -8,8 +8,9 @@ export default defineConfig({
     federation({
       name: 'ledgerelyApp',
       filename: 'remoteEntry.js',
-      exposes: {},
-      remotes: {},
+      exposes: {
+        './Dashboard': './src/Dashboard.tsx',
+      },
       shared: ['react', 'react-dom'],
     }),
   ],
