@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
       remotes: {
         ledgerelyApp:
           mode === 'production'
-            ? 'https://ledgerely.com/test/dist/assets/remoteEntry.js'
+            ? 'https://ledgerely.com/ledgerely/assets/remoteEntry.js'
             : 'http://localhost:4000/dist/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom', 'zustand'],
