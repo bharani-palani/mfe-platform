@@ -21,9 +21,9 @@ function App() {
 
   return (
     <section className="m-4">
-      <div className="p-5 bg-green-300 rounded-lg text-3xl py-3 px-2">
+      <h1 className="p-5 bg-green-300 rounded-lg text-3xl py-3 px-2">
         Vite + federation + tailwind + zustand + Tanstack router + Vitest
-      </div>
+      </h1>
       <hr className="my-3" />
       <h3 className="text-2xl">Loaded UI from packages</h3>
       <Button className="inline-flex rounded-sm cursor-pointer bg-blue-700 px-2 py-1 text-xs font-small text-white me-1">

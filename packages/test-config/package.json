@@ -1,0 +1,6 @@
+{
+  "name": "@repo/test-config",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "vitest.config.ts"
+}

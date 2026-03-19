@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./*": "./src/*.tsx",
-    "./styles.css": "./dist/index.css"
+    "./*": "./src/*.tsx"
   },
   "scripts": {
     "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
