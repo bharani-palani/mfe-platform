@@ -6,7 +6,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: './setup.ts',
+    setupFiles: new URL('./setup.ts', import.meta.url).pathname,
     coverage: {
       reporter: ['text', 'json', 'html'],
     },

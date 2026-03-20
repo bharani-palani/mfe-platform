@@ -6,6 +6,9 @@ export default mergeConfig(
   defineConfig({
     test: {
       name: 'shell-app',
+      environment: 'jsdom',
+      globals: true,
+      setupFiles: './setup.ts',
     },
     resolve: {
       alias: {
