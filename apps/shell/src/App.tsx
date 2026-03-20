@@ -1,5 +1,5 @@
 /* @vite-ignore */
-import React, { useEffect, useState, Suspense } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@repo/ui'
 import { userStore } from '@repo/store'
 // const Dashboard = React.lazy(() => import('ledgerelyApp/Dashboard'))
