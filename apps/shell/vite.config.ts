@@ -33,4 +33,9 @@ export default defineConfig(({ mode }) => ({
       '@repo/store': '../../../packages/store/mainStore',
     },
   },
+  test: {
+    deps: {
+      external: ['ledgerelyApp/Dashboard'],
+    },
+  },
 }))
