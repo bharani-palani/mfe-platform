@@ -2,5 +2,6 @@
   "name": "@repo/test-config",
   "version": "1.0.0",
   "type": "module",
+  "exports": "./vitest.config.mjs",
   "main": "vitest.config.ts"
 }
