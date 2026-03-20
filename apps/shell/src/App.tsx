@@ -1,8 +1,8 @@
 /* @vite-ignore */
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { Button } from '@repo/ui'
 import { userStore } from '@repo/store'
-// const Dashboard = React.lazy(() => import('ledgerelyApp/Dashboard'))
+const Dashboard = React.lazy(() => import('ledgerelyApp/Dashboard'))
 import '@repo/tailwind-config/styles'
 
 function App() {
@@ -56,9 +56,9 @@ function App() {
       </Button>
       <hr className="my-3" />
       <h3 className="text-2xl">Loaded components from MFE</h3>
-      {/* <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader />}>
         <Dashboard />
-      </Suspense> */}
+      </Suspense>
       <hr className="my-3" />
       <h3 className="text-2xl my-1">API call</h3>
       {loading && <Loader />}

@@ -7,5 +7,10 @@ export default mergeConfig(
     test: {
       name: 'shell-app',
     },
+    resolve: {
+      alias: {
+        'ledgerelyApp/Dashboard': '/src/__mocks__/Dashboard.tsx',
+      },
+    },
   }),
 )

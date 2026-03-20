@@ -1,6 +1,10 @@
 import { describe, it, expect, vi } from 'vitest'
 import * as store from '@repo/store'
 
+vi.mock('ledgerelyApp/Dashboard', () => ({
+  default: () => <div>Mock Dashboard</div>,
+}))
+
 // Mock fetch for API call
 globalThis.fetch = vi.fn(() =>
   Promise.resolve({
@@ -86,6 +90,7 @@ describe('App Component', () => {
   it('renders the MFE section and Dashboard', async () => {
     render(<App />)
     expect(screen.getByText('Loaded components from MFE')).toBeInTheDocument()
+    expect(await screen.findByText('Mock Dashboard')).toBeInTheDocument()
   })
 
   it('shows loading indicator while fetching API data', async () => {

@@ -38,10 +38,13 @@ jobs:
       - name: npm install
         run: npm install --force
 
+      - name: npm run test
+        run: npm run test
+
       - name: npm run build
         run: npm run build
 
-      - name: Deployin dist folder and contents..
+      - name: Displaying dist folder and contents..
         run: |
           ls -R -l apps/ledgerely/dist
           ls -R -l apps/shell/dist
