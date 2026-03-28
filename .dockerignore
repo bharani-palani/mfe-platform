@@ -1,0 +1,76 @@
+# -----------------------------
+# Node / Dependencies
+# -----------------------------
+node_modules
+**/node_modules
+.pnpm
+.pnp
+.pnp.js
+
+# -----------------------------
+# Build outputs
+# -----------------------------
+dist
+build
+.out
+.next
+coverage
+**/dist
+**/build
+
+# -----------------------------
+# Turbo / Cache
+# -----------------------------
+.turbo
+.cache
+
+# -----------------------------
+# Logs
+# -----------------------------
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# -----------------------------
+# Git
+# -----------------------------
+.git
+.gitignore
+
+# -----------------------------
+# OS / Editor
+# -----------------------------
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# -----------------------------
+# Env files (important for security)
+# -----------------------------
+.env
+.env.*
+!.env.example
+
+# -----------------------------
+# Docker (avoid recursive copy issues)
+# -----------------------------
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# -----------------------------
+# Tests (optional for production image)
+# -----------------------------
+__tests__
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# -----------------------------
+# Misc
+# -----------------------------
+*.md

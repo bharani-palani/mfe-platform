@@ -1,0 +1,40 @@
+services:
+  shell:
+    build:
+      context: .
+      dockerfile: apps/shell/Dockerfile
+      args:
+        APP_NAME: shell
+    restart: always
+    ports:
+      - '4002:80'
+    depends_on:
+      - ledgerely
+      - officeadmin
+
+  ledgerely:
+    build:
+      context: .
+      dockerfile: apps/ledgerely/Dockerfile
+      args:
+        APP_NAME: ledgerely
+    restart: always
+    ports:
+      - '4000:80'
+
+  officeadmin:
+    build:
+      context: .
+      dockerfile: apps/officeAdmin/Dockerfile
+      args:
+        APP_NAME: officeAdmin
+    restart: always
+    ports:
+      - '4001:80'
+
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    external: true

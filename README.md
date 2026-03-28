@@ -157,3 +157,11 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
 - [Configuration Options](https://turborepo.dev/docs/reference/configuration)
 - [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+
+### Docker
+
+- docker-compose build --no-cache
+- docker-compose up
+- docker compose watch
+- docker images
+- docker-compose ps
