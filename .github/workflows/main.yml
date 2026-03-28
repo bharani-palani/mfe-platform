@@ -48,7 +48,7 @@ jobs:
         run: |
           ls -R -l apps/ledgerely/dist
           ls -R -l apps/shell/dist
-          ls -R -l apps/officeAdmin/dist
+          ls -R -l apps/office-admin/dist
 
       - name: Uploading Shell
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -70,12 +70,12 @@ jobs:
           local-dir: apps/ledgerely/dist/
           server-dir: public_html/ledgerely/
 
-      - name: Uploading officeAdmin
+      - name: Uploading office-admin
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: 119.18.54.49
           username: ledgerfg
           password: Bnisuccess@!123
           port: '21'
-          local-dir: apps/officeAdmin/dist/
-          server-dir: public_html/officeAdmin/
+          local-dir: apps/office-admin/dist/
+          server-dir: public_html/office-admin/

@@ -8,5 +8,5 @@ RUN npm install -g vite turbo
 RUN npm install --force
 # Copy app source
 COPY . .
-# EXPOSE 4002
-CMD ["vite", "preview", "--port", "4002", "--host", "0.0.0.0"]
+# EXPOSE 4001
+CMD ["vite", "preview", "--port", "4001", "--host", "0.0.0.0"]

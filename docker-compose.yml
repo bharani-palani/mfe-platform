@@ -1,4 +1,6 @@
 services:
+  app:
+    image: node:20-alpine
   shell:
     build:
       context: .
@@ -7,10 +9,10 @@ services:
         APP_NAME: shell
     restart: always
     ports:
-      - '4002:80'
+      - '4002:4173'
     depends_on:
       - ledgerely
-      - officeadmin
+      - office-admin
 
   ledgerely:
     build:
@@ -20,21 +22,14 @@ services:
         APP_NAME: ledgerely
     restart: always
     ports:
-      - '4000:80'
+      - '4000:4173'
 
-  officeadmin:
+  office-admin:
     build:
       context: .
-      dockerfile: apps/officeAdmin/Dockerfile
+      dockerfile: apps/office-admin/Dockerfile
       args:
-        APP_NAME: officeAdmin
+        APP_NAME: office-admin
     restart: always
     ports:
-      - '4001:80'
-
-    networks:
-      - app_network
-
-networks:
-  app_network:
-    external: true
+      - '4001:4173'

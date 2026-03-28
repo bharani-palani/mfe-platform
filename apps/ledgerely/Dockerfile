@@ -1,19 +1,12 @@
 FROM node:20-alpine
-
-# Set working directory
-WORKDIR /app
-
-# Copy package files first (better caching)
+WORKDIR /usr/src/app
+# Copy root package.json and lockfile
 COPY package.json ./
-
-# Install dependencies
-RUN npm install --legacy-peer-deps
-
-# Copy rest of the app
+# Copy the api package.json
+# COPY apps/shell/package.json ./apps/shell/package.json
+RUN npm install -g vite turbo
+RUN npm install --force
+# Copy app source
 COPY . .
-
-# Expose Vite port
-EXPOSE 4000
-
-# Run Vite dev server
-CMD ["npm", "run", "dev"]
+# EXPOSE 4000
+CMD ["vite", "preview", "--port", "4000", "--host", "0.0.0.0"]

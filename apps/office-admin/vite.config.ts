@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'officeAdminApp',
+      name: 'office-admin-app',
       filename: 'remoteEntry.js',
       exposes: {},
       remotes: {},

@@ -1,21 +1,19 @@
-FROM node:20-alpine as builder
+# Root Dockerfile (base for all builds)
 
-# Set working directory
-# WORKDIR /app
+FROM node:20-alpine AS base
 
-# Copy package files first (better caching)
+WORKDIR /app
+
+# Enable corepack (important for turborepo)
+RUN corepack enable
+
+# Copy only root configs first (better caching)
 COPY package.json package-lock.json turbo.json ./
 
 # Install dependencies
-RUN npm install --force
-RUN npx turbo run build
+RUN npm install
 
-# Copy rest of the app
-# COPY . .
-COPY --from=builder /app ./
+# Copy full repo
+COPY . .
 
-# Expose Vite port
-EXPOSE 3000
-
-# Run Vite dev server
-CMD ["npm", "run", "preview"]
+CMD ["sh"]
